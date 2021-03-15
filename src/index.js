@@ -3,16 +3,12 @@
 
 module.exports = function towelSort(matrix) {
     if (matrix && matrix.length != 0) {
-        var array = [];
+        let array = [];
         for (let i = 0; i < matrix.length; i++) {
             if (i == 0 || i % 2 == 0) {
-                for (let k = 0; k < matrix.length; k++) {
-                    array.push(matrix[i][k]);
-                }
+                array = array.contact(matrix[i]);
             } else {
-                for (let k = matrix.length - 1; k >= 0; k--) {
-                    array.push(matrix[i][k]);
-                }
+                array = array.contact(matrix[i].reverse());
             }  
         }
         return array;
